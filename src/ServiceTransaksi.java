@@ -16,5 +16,12 @@ public class ServiceTransaksi {
         }
     }
 
+    public void displayData() {
+        System.out.println("Kode Transaksi\tNo Rekening\tSaldo\t\tDebit/Kredit\tFinal Saldo\tTanggal Transaksi\tType");
+        for (int i = 0; i < idx; i++) {
+            Transaksi[i].tampil();
+        }
+    }
+
   
 }
