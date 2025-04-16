@@ -12,6 +12,7 @@ public class Bank {
         this.noHp = noHp;
         this.email = email;
     }
+    
 
     public void tampil() {
         System.out.println("No Rekening: " + noRekening);
