@@ -1,5 +1,9 @@
+import java.util.Scanner;
+
 public class mainBank {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
         ServiceTransaksi layanan = new ServiceTransaksi(5);
 
         Bank b1 = new Bank("16030927 3084", "Wallace", "Mei Mei", "082-458-264-3263", "wallace@mail.com");
@@ -13,7 +17,46 @@ public class mainBank {
         Transaksi t3 = new Transaksi("Tr003", 300000, 300000, 600000, "23-04-2024", "Debit", b3);
         Transaksi t4 = new Transaksi("Tr002", 200000, 100000, 300000, "23-04-2024", "Kredit", b4);
         Transaksi t5 = new Transaksi("Tr001", 200000, 100000, 100000, "23-04-2024", "Debit", b5);
-        
+
+        layanan.tambah(t1);
+        layanan.tambah(t2);
+        layanan.tambah(t3);
+        layanan.tambah(t4);
+        layanan.tambah(t5);
+
+        int pilihan;
+        do {
+            System.out.println("=== POLINEMA BANK ===");
+            System.out.println("BANK MENU:");
+            System.out.println("1. Data Norek");
+            System.out.println("2. Data Transaksi");
+            System.out.println("3. Search data");
+            System.out.println("4. Display min/max Saldo");
+            System.out.println("5. Sort Data");
+            System.out.println("0. Keluar");
+            System.out.print("Pilih menu: ");
+            pilihan = input.nextInt();
+            input.nextLine();
+
+            switch (pilihan) {
+                case 1:
+                layanan.displayDataRekening();
+                    break;
+                case 2:
+                    layanan.displayData();
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 0:
+                    System.out.println("Program selesai.");
+                    break;
+
+                default:
+                    System.out.println("Pilihan tidak valid!");
+            }
+        } while (pilihan != 0);
 
     }
 
