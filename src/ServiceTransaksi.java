@@ -15,6 +15,5 @@ public class ServiceTransaksi {
             System.out.println("Data sudah penuh!");
         }
     }
-
-  
 }
+
