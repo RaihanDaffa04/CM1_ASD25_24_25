@@ -15,6 +15,7 @@ public class ServiceTransaksi {
             System.out.println("Data sudah penuh!");
         }
     }
+<<<<<<< HEAD
 
     public void displayData() {
         System.out.println("Kode Transaksi\tNo Rekening\tSaldo\t\tDebit/Kredit\tFinal Saldo\tTanggal Transaksi\tType");
@@ -24,4 +25,7 @@ public class ServiceTransaksi {
     }
 
   
+=======
+>>>>>>> a73c121ea39f337e2c1efe74d194545f53ee0d75
 }
+
