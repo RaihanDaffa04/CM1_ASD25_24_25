@@ -17,13 +17,13 @@ public class ServiceTransaksi {
     }
     public void displayDataRekening() {
     System.out.println("No Rekening\tNama\t\tNama Ibu\tNo HP\t\tEmail");
+    
     for (int i = 0; i < idx; i++) {
-        Bank bank = Transaksi[i].bankAcc;
-        System.out.println(bank.noRekening + "\t" +
-                           bank.nama + "\t\t" +
-                           bank.namaIbu + "\t" +
-                           bank.noHp + "\t" +
-                           bank.email);
+        System.out.println(Transaksi[i].bankAcc.noRekening + "\t" +
+        Transaksi[i].bankAcc.nama + "\t\t" +
+        Transaksi[i].bankAcc.namaIbu + "\t" +
+        Transaksi[i].bankAcc.noHp + "\t" +
+        Transaksi[i].bankAcc.email);
     }
 }
     
@@ -45,6 +45,34 @@ public class ServiceTransaksi {
         System.out.println("Data tidak ditemukan.");
     
     }
+    public void maxSaldo () {
+        if (idx == 0) {
+            System.out.println("Data kosong.");
+            return;
+        }
+    
+        Transaksi max = Transaksi[0];
+        for (int i = 1; i < idx; i++) {
+            if (Transaksi[i].finalSaldo > max.finalSaldo) {
+                max = Transaksi[i];
+            }
+        }
+    
+        System.out.println("Menampilkan Saldo Tertinggi");
+        max.tampil();
+    }
+
+    public void sortingfinalSaldoASC () {
+        for (int i = 0; i < idx - 1; i++) {
+            for (int j = 0; j < idx - i - 1; j++) {
+                if (Transaksi[j].finalSaldo > Transaksi[j + 1].finalSaldo) {
+                    Transaksi temp = Transaksi[j];
+                    Transaksi[j] = Transaksi[j + 1];
+                    Transaksi[j + 1] = temp;
+                }
+            }
+        }
+}
 
 }
 
